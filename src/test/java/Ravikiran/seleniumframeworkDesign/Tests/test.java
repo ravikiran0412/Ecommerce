@@ -1,4 +1,4 @@
-package Ravikiran.seleniumframeworkDesign;
+package Ravikiran.seleniumframeworkDesign.Tests;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

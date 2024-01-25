@@ -1,4 +1,4 @@
-package Ravikiran.seleniumframeworkDesign;
+package Ravikiran.seleniumframeworkDesign.Tests;
 
 import java.time.Duration;
 import java.util.List;
