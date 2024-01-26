@@ -33,7 +33,8 @@ public class Addcart extends BaseTest {
 		// TODO Auto-generated method stub
 		String name = "ADIDAS ORIGINAL";
 		String finalconfirmation="THANKYOU FOR THE ORDER.";
-		Homepage home  =    LaunchApplication();
+		Homepage home  = LaunchApplication();
+		//Adding comments
 		
 		
 		
