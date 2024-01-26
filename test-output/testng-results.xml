@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-01-26T20:03:17 IST" name="Default suite" finished-at="2024-01-26T20:03:28 IST" duration-ms="10251">
+    <groups>
+    </groups>
+    <test started-at="2024-01-26T20:03:17 IST" name="Default test" finished-at="2024-01-26T20:03:28 IST" duration-ms="10251">
+      <class name="Ravikiran.seleniumframeworkDesign.Addcart">
+        <test-method signature="submitorder()[pri:0, instance:Ravikiran.seleniumframeworkDesign.Addcart@645aa696]" started-at="2024-01-26T20:03:17 IST" name="submitorder" finished-at="2024-01-26T20:03:28 IST" duration-ms="10184" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitorder -->
+      </class> <!-- Ravikiran.seleniumframeworkDesign.Addcart -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
