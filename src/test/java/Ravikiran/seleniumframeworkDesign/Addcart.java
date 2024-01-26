@@ -1,5 +1,6 @@
-package Ravikiran.seleniumframeworkDesign.Tests;
+package Ravikiran.seleniumframeworkDesign;
 
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -11,29 +12,32 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import Ravikiran.seleniumframeworkDesign.PageObjects.Confirmationpage;
 import Ravikiran.seleniumframeworkDesign.PageObjects.Homepage;
 import Ravikiran.seleniumframeworkDesign.PageObjects.Products;
 import Ravikiran.seleniumframeworkDesign.PageObjects.cartpage;
 import Ravikiran.seleniumframeworkDesign.PageObjects.checkoutpage;
+import Ravikiran.seleniumframeworkDesign.Test.BaseTest;
 //import Ravikiran.seleniumframeworkDesign.PageObjects.landingpage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class Addcart {
+public class Addcart extends BaseTest {
 
-	@SuppressWarnings("deprecation")
-	public static void main(String[] args) throws InterruptedException {
+	@Test
+	
+	public void submitorder() throws IOException, InterruptedException
+	{
+		
 		// TODO Auto-generated method stub
 		String name = "ADIDAS ORIGINAL";
 		String finalconfirmation="THANKYOU FOR THE ORDER.";
-		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		Homepage home  =    LaunchApplication();
 		
 		
-		Homepage home = new Homepage(driver);
-		home.seturl("https://rahulshettyacademy.com/client");
+		
+		
 		Products prodc =home.login("test@mailsac.com", "Testuser123@");
 		//Products prodc = new Products(driver);
 		List<WebElement> product = prodc.getProductslist();
