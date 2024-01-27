@@ -5,12 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Homepage {
+import raviki.abstractcomponents.AbstractComponents;
+
+public class Homepage extends AbstractComponents {
 	WebDriver driver;
 	
 	public Homepage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
-		
+		super(driver);
 		this.driver = driver;
 		PageFactory.initElements(driver, this );
 	}
@@ -25,6 +27,9 @@ public class Homepage {
 	@FindBy(id="login")
 	WebElement submit;
 	
+	@FindBy(css="[class*='flyInOut']")
+	WebElement errormess;
+	
 	public Products login(String keys, String pass)
 	{
 		  mail.sendKeys(keys);
@@ -38,7 +43,11 @@ public class Homepage {
 	{
 		driver.get(Url);
 	}
-	
+	 public String errorvalidation()
+	 {
+		 waittillvisibleElement(errormess);
+		 return errormess.getText();
+	 }
 
 	
 	

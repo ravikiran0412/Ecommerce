@@ -50,6 +50,7 @@ public class BaseTest {
 		 home = new Homepage(driver);
 		home.seturl("https://rahulshettyacademy.com/client");
 		return home;
+		
 	}
 	
 	@AfterTest

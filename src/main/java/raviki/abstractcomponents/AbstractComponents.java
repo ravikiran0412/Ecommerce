@@ -31,6 +31,11 @@ public class AbstractComponents {
          wait.until(ExpectedConditions.visibilityOf(driver.findElement(findby)));
 	}
 	
+	public void waittillvisibleElement(WebElement findby) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+         wait.until(ExpectedConditions.visibilityOf(findby));
+	}
+	
 	
 	public void waittillinvisible(WebElement ele) throws InterruptedException
 	{
