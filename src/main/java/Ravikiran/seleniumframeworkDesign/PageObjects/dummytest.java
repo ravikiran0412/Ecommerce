@@ -1,5 +1,5 @@
 package Ravikiran.seleniumframeworkDesign.PageObjects;
 
-public class dummy {
+public class dummytest {
 
 }
