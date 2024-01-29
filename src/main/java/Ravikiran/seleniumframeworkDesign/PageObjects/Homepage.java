@@ -19,6 +19,7 @@ public class Homepage extends AbstractComponents {
 	
 	@FindBy(id="userEmail")
 	WebElement mail;
+	
 
 	@FindBy(id="userPassword")
 	WebElement password;

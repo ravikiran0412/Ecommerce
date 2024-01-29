@@ -9,6 +9,8 @@ import java.util.concurrent.TimeUnit;
 import org.bouncycastle.oer.its.ieee1609dot2.basetypes.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -34,30 +36,54 @@ public class BaseTest {
 		if (browseri.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-
 		}
+			else if(browseri.equalsIgnoreCase("firefox"))
+
+			{
+
+			WebDriverManager.firefoxdriver().setup();
+
+			driver=new FirefoxDriver();
+
+			}
+
+			else if(browseri.equalsIgnoreCase("edge"))
+
+			{
+
+			WebDriverManager.edgedriver().setup();
+
+			driver=new EdgeDriver();
+
+			}
+
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 		driver.manage().window().maximize();
 
 		return driver;
-
 	}
+
+	
+
 	@BeforeTest
 
 	public Homepage LaunchApplication() throws IOException {
 		driver = intializeDriver();
-		 home = new Homepage(driver);
+		home = new Homepage(driver);
 		home.seturl("https://rahulshettyacademy.com/client");
 		return home;
-		
+
 	}
 	
 	@AfterTest
 	
-	public void Closetabs()
+	public void quit()
 	{
-		driver.close();
+		driver.quit();
 	}
+
+	
 
 }

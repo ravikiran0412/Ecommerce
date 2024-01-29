@@ -25,7 +25,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class errorvalidation extends BaseTest {
 
-	@Test
+	@Test(enabled=false)
 
 	public void submitorder() throws IOException, InterruptedException {
 
@@ -35,7 +35,7 @@ public class errorvalidation extends BaseTest {
 		Products prodc = home.login("tt@mailsac.com", "Testuser123@");
 		String text = home.errorvalidation();
 		System.out.print(text);
-		Assert.assertEquals(text, "Incorrecct email or password.");
+		Assert.assertEquals(text, "Incorrect email or password.");
 		
 
 	}

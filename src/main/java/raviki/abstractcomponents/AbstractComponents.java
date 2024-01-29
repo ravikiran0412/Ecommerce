@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Ravikiran.seleniumframeworkDesign.PageObjects.cartpage;
+import Ravikiran.seleniumframeworkDesign.PageObjects.orderpage;
 
 public class AbstractComponents {
 	WebDriver driver;
@@ -24,6 +25,9 @@ public class AbstractComponents {
 		PageFactory.initElements(driver, this );
 	}
 	
+	@FindBy(css="[routerlink*='myorders']")
+	WebElement order;
+	
 	
 	
 	public void waittillvisible(By findby) {
@@ -34,6 +38,7 @@ public class AbstractComponents {
 	public void waittillvisibleElement(WebElement findby) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
          wait.until(ExpectedConditions.visibilityOf(findby));
+         
 	}
 	
 	
@@ -44,5 +49,13 @@ public class AbstractComponents {
 		 //wait.until(ExpectedConditions.invisibilityOf(ele));
 	}
    
+	public orderpage orderheader()
+	{
+		order.click();
+		orderpage order= new orderpage(driver);
+		return order;
+		
+		
+	}
 
 }
